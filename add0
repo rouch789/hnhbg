@@ -1,0 +1,18 @@
+module add(c0,a1,a2,a3,a4,b1,b2,b3,b4,s1,s2,s3,s4,c1,c2,c3,c4,c);
+input [1:0] b1,b2,b3,b4,a1,a2,a3,a4,c0;
+output reg [5:1] c;
+output reg s1,s2,s3,s4,c1,c2,c3,c4;
+
+always @ (a1 or b1)
+ begin
+  
+    {c1,s1}=a1+b1+c0;
+    {c2,s2}=a2+b2+c1;
+    {c3,s3}=a3+b3+c2;
+    {c4,s4}=a4+b4+c3;
+    c={c4,s4,s3,s2,s1};
+    end
+       
+     
+  
+endmodule
